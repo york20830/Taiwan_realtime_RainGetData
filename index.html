@@ -127,14 +127,14 @@
 
 
         function updateLayer() {
-            $.getJSON('http://anyorigin.com/go?url=http%3A//246.swcb.gov.tw/webService/GetRainData.ashx&callback=?', function(data) {
+            $.getJSON('data/GetRainData.json', function(data) {
 
                 var x, y, rain = [],
                     features = [],
                     point = [],
                     latlng, realtime;
                 var j = 0;
-                var station = data.contents;
+                var station = data;
                 for (var i = 0; i < station.length; i++) {
                     realtime = station[3].time;
                     if (station[i].lon_WGS84 != null && station[i].lat_WGS84 != null) {
